@@ -697,11 +697,11 @@
       </div>
 
       <div class="filter-bar">
-        <button class="filter-btn active" onclick="filterProjects('all', this)">All Case Studies (8)</button>
+        <button class="filter-btn active" onclick="filterProjects('all', this)">All Case Studies (10)</button>
         <button class="filter-btn" onclick="filterProjects('sim', this)">CFD, FEA & MATLAB Simulations (3)</button>
         <button class="filter-btn" onclick="filterProjects('mat', this)">Materials, Corrosion & Lab R&D (2)</button>
         <button class="filter-btn" onclick="filterProjects('pm', this)">Engineering Design & Project Management (2)</button>
-        <button class="filter-btn" onclick="filterProjects('ai', this)">AI-Augmented Product Architecture (1)</button>
+        <button class="filter-btn" onclick="filterProjects('ai', this)">AI-Augmented Product Architecture (3)</button>
       </div>
 
       <div class="projects-grid">
@@ -985,22 +985,22 @@
           </div>
         </article>
 
-        <!-- 8. AI-Augmented Product Architecture: Polyglot Engine & IndiCAT -->
+        <!-- 8. AI-Augmented Product Architecture: Polyglot Engine -->
         <article class="project-card" data-category="ai" id="ai-products">
           <div class="project-content">
             <div>
               <div class="project-meta">
                 <span class="cat-tag ai">AI-Augmented Product Architecture</span>
-                <span class="score-badge">Product Architect & Logic Designer</span>
+                <span class="score-badge">Product Architect & Systems Logic Designer</span>
               </div>
-              <h3 class="project-title">Polyglot Engine CLI & IndiCAT — Domain-Driven Localization & Layout Repair Systems</h3>
+              <h3 class="project-title">Polyglot Engine CLI — Autonomous Multilingual UI Layout Scanner & Verified Repair System</h3>
               <p class="project-summary">
-                Drawing directly from 3+ years managing high-stakes national localization operations (NTA, TCS iON, IBPS), I conceived the product vision, system architecture, and verification logic for two end-to-end software tools—orchestrating AI-assisted coding workflows to build, test, and ship them.
+                Drawing from 3+ years managing high-stakes national localization operations (NTA, TCS iON, IBPS), I conceived the product vision, 6-layer system architecture, and closed-loop repair logic for <strong>Polyglot Engine</strong> (<code>github.com/Raghavender1234/polyglot-engine</code>)—orchestrating AI-assisted coding workflows to build, test, and ship it end-to-end.
               </p>
               <ul class="project-bullets">
-                <li><strong>Polyglot Engine (<code>github.com/Raghavender1234/polyglot-engine</code>):</strong> Designed a 6-layer architecture connecting whole-DOM Playwright geometry scanning, HarfBuzz text shaping (&lt;1.5 ms), and Unicode BiDi isolation to diagnose whether UI breakage stems from translation verbosity or rigid CSS, executing closed-loop candidate backtracking and verified CSS diff patching.</li>
-                <li><strong>IndiCAT (<code>indicat.co.in</code>) & UK Rota Optimizer:</strong> Architected a Windows desktop CAT & subtitle localization platform with local/cloud LLMs, PWA sync, and WhatsApp/Telegram bot integration, alongside a constraint-based UK Food Store Rota Optimizer and Multi-Tenant AI LMS.</li>
-                <li><strong>Authentic Engineering Role:</strong> I authored the problem definitions, 6-layer architectural blueprints, edge-case rules, and verification criteria, leveraging AI coding assistants to accelerate implementation, automated <code>pytest</code> validation, and CI/CD packaging.</li>
+                <li><strong>6-Layer Diagnostic Architecture:</strong> Connects whole-DOM Playwright geometry scanning, HarfBuzz OpenType text shaping (&lt;1.5 ms), and Unicode BiDi isolation to determine whether UI defects stem from translation verbosity (e.g., German compound words) or rigid CSS constraints.</li>
+                <li><strong>Closed-Loop Repair & Verification:</strong> Performs multi-candidate length-constrained translation backtracking alongside deterministic CSS diff generation, verifying repairs in a headless browser before emitting interactive HTML diff reports.</li>
+                <li><strong>Authentic Engineering Role:</strong> I authored the problem formulation, 6-layer architectural blueprints, edge-case rules, and verification criteria, directing AI coding assistants to implement the Python/FastAPI codebase, <code>pytest</code> suite, and GitHub Action CI/CD pipeline.</li>
               </ul>
             </div>
             <div class="tech-stack">
@@ -1008,7 +1008,7 @@
               <span class="tech-chip">AI-Augmented Engineering</span>
               <span class="tech-chip">Playwright DOM Inspection</span>
               <span class="tech-chip">HarfBuzz & Unicode BiDi</span>
-              <span class="tech-chip">FastAPI / Python / GitHub Actions</span>
+              <span class="tech-chip">Python / FastAPI / GitHub Actions</span>
             </div>
           </div>
           <div class="project-gallery">
@@ -1019,6 +1019,93 @@
             <div class="thumb-strip">
               <button class="thumb-btn active" onclick="switchImg(this, 'assets/images/polyglot_before.png', 'Polyglot Engine Live HUD: Diagnosing & Repairing German Overflow (+35.7px) & Arabic BiDi Alignment')"><img src="assets/images/polyglot_before.png" alt="Polyglot Proof 1"/></button>
               <button class="thumb-btn" onclick="switchImg(this, 'assets/images/polyglot_after.png', 'Polyglot Engine Full-Page German (de-DE) DOM Audit & Closed-Loop Verification')"><img src="assets/images/polyglot_after.png" alt="Polyglot Proof 2"/></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 9. AI-Augmented Product Architecture: IndiCAT Workstation -->
+        <article class="project-card" data-category="ai">
+          <div class="project-content">
+            <div>
+              <div class="project-meta">
+                <span class="cat-tag ai">AI-Augmented Product Architecture · Live on Microsoft Store</span>
+                <span class="score-badge">Founder & Product Architect · indicat.co.in</span>
+              </div>
+              <h3 class="project-title">IndiCAT Workstation — Multi-Format CAT, Subtitling, Voice Dubbing & Translator CRM Platform</h3>
+              <p class="project-summary">
+                Architected and shipped an all-in-one Windows Computer-Assisted Translation (CAT) and localization workstation published on the <strong>Microsoft Store</strong>, supporting <strong>22 official Indian languages and 200+ global languages</strong> across DOCX, Excel, Trados SDLXLIFF, Subtitles, and PDF formats.
+              </p>
+              <ul class="project-bullets">
+                <li><strong>Human-in-the-Middle Offline & Cloud AI:</strong> Designed a 3-mode workflow combining 100% offline local neural translation (IndicTrans2 &amp; NLLB with zero cloud data leakage), Fast Cloud AI (DIA AI Pro), and side-by-side CAT editing with live Translation Memory (TM), TBX/TMX/CSV Glossaries, and automated number/tag QA checks.</li>
+                <li><strong>Video Subtitle &amp; Neural Voice Dubbing Studio:</strong> Integrated offline Whisper speech-to-text transcription, timestamp-synced subtitle editing (SRT/VTT/ASS), and multi-speaker neural voice dubbing with waveform preview.</li>
+                <li><strong>Remote Freelancer Bot Control &amp; Built-In CRM:</strong> Conceived remote project monitoring via WhatsApp, Telegram Bot (<code>@IndiCAT_Freelance_Bot</code>), and mobile PWA, plus an integrated Translator CRM tracking client pipelines, word-rate invoicing, and revenue analytics.</li>
+              </ul>
+            </div>
+            <div class="tech-stack">
+              <span class="tech-chip">Microsoft Store App</span>
+              <span class="tech-chip">IndicTrans2 &amp; NLLB (Offline AI)</span>
+              <span class="tech-chip">SDLXLIFF / DOCX / TM / QA</span>
+              <span class="tech-chip">Whisper Subtitling &amp; Voice Dubbing</span>
+              <span class="tech-chip">WhatsApp &amp; Telegram Bot Sync</span>
+              <span class="tech-chip">Translator CRM &amp; Invoicing</span>
+            </div>
+          </div>
+          <div class="project-gallery">
+            <div class="main-img-wrap" onclick="openLightbox(this)">
+              <img src="assets/images/indicat_01_multiformat_dashboard.png" alt="IndiCAT Multi-Format DOCX, XLSX, Trados SDLXLIFF & Subtitle Dashboard" />
+            </div>
+            <div class="img-caption-bar">IndiCAT Multi-Format Localization Workspace (DOCX, Excel, Trados SDLXLIFF, Subtitles & PDF across 22 Indian + 200+ Global Languages)</div>
+            <div class="thumb-strip">
+              <button class="thumb-btn active" onclick="switchImg(this, 'assets/images/indicat_01_multiformat_dashboard.png', 'IndiCAT Multi-Format Localization Workspace (DOCX, Excel, Trados SDLXLIFF, Subtitles & PDF across 22 Indian + 200+ Global Languages)')"><img src="assets/images/indicat_01_multiformat_dashboard.png" alt="Dashboard"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/indicat_03_cat_editor_tm_qa.png', 'Side-by-Side CAT Editor with Live Translation Memory (TM), Glossary Override & Automated QA Checks')"><img src="assets/images/indicat_03_cat_editor_tm_qa.png" alt="CAT Editor"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/indicat_live_telugu_qa.png', 'Live English-to-Telugu Exam Localization Session Catching Real-Time Number Mismatch QA Warning')"><img src="assets/images/indicat_live_telugu_qa.png" alt="Telugu QA"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/indicat_05_subtitle_voice_dubbing.png', 'Inbuilt Video Subtitle & Neural Voice Dubbing Studio (Offline Whisper Transcription + Synced AI Voiceover)')"><img src="assets/images/indicat_05_subtitle_voice_dubbing.png" alt="Dubbing Studio"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/indicat_06_translator_crm_invoicing.png', 'Built-In Translator CRM, Client Pipeline, Revenue Analytics & Automated Invoicing — Live on Microsoft Store')"><img src="assets/images/indicat_06_translator_crm_invoicing.png" alt="CRM"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/indicat_04_remote_whatsapp_telegram.png', 'Remote Freelancer Control via WhatsApp Bot, Telegram Bot (@IndiCAT_Freelance_Bot) & Mobile Web PWA')"><img src="assets/images/indicat_04_remote_whatsapp_telegram.png" alt="Remote Bot"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/indicat_02_offline_cloud_ai.png', 'Human-in-the-Middle Control: 100% Offline Local AI (IndicTrans2/NLLB) or Fast Cloud AI with Custom Glossaries')"><img src="assets/images/indicat_02_offline_cloud_ai.png" alt="AI Modes"/></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 10. AI-Augmented Product Architecture: OpenLMS / PR DIA -->
+        <article class="project-card" data-category="ai">
+          <div class="project-content">
+            <div>
+              <div class="project-meta">
+                <span class="cat-tag ai">AI-Augmented Product Architecture · EdTech &amp; Enterprise LMS</span>
+                <span class="score-badge">Product Architect · github.com/Raghavender1234/pr-dia</span>
+              </div>
+              <h3 class="project-title">OpenLMS (PR DIA) — Multi-Tenant AI-Native Learning &amp; Engineering Exam Assessment Platform</h3>
+              <p class="project-summary">
+                Conceived and architected a modular, open-source multi-tenant Learning Management and Competitive Assessment platform (<code>github.com/Raghavender1234/pr-dia</code>) tailored for engineering academies (including a full <strong>UPSC ESE Mechanical Engineering</strong> curriculum), universities, and enterprise training cohorts.
+              </p>
+              <ul class="project-bullets">
+                <li><strong>Multi-Tenant RBAC &amp; Subdomain Isolation:</strong> Designed 4-tier role-based access control (Super Admin, Organization Co-Admin, Lead Faculty, and Student) with tenant-isolated workspaces, approval queues, and subscription plan tiers.</li>
+                <li><strong>Socratic AI Tutor &amp; Automated Question Generation:</strong> Engineered context-aware AI tutoring workflows that guide learners through engineering and analytical concepts step-by-step, generate daily current-affairs/subject MCQs, and compute weekly mastery snapshots.</li>
+                <li><strong>Enterprise Timed Assessment Simulator &amp; Mechanical Engineering Bank:</strong> Structured complex examination schemas supporting single-choice, multi-statement, assertion-reason, comprehension passages, and LaTeX/MathJax equations across Fluid Mechanics, Thermodynamics, IC Engines, Power Plants, Theory of Machines, and Strength of Materials.</li>
+              </ul>
+            </div>
+            <div class="tech-stack">
+              <span class="tech-chip">Multi-Tenant Architecture</span>
+              <span class="tech-chip">Python / Flask / SQLAlchemy</span>
+              <span class="tech-chip">Socratic AI Tutor Engine</span>
+              <span class="tech-chip">UPSC ESE Mechanical Curriculum</span>
+              <span class="tech-chip">JWT RBAC &amp; Docker</span>
+            </div>
+          </div>
+          <div class="project-gallery">
+            <div class="main-img-wrap" onclick="openLightbox(this)">
+              <img src="assets/images/openlms_ui_subjects.png" alt="OpenLMS / DIA UPSC ESE Mechanical Engineering Curriculum Modules" />
+            </div>
+            <div class="img-caption-bar">OpenLMS (DIA) Mechanical Engineering Curriculum: Fluid Mechanics, Thermodynamics, IC Engines, Power Plants &amp; Solid Mechanics</div>
+            <div class="thumb-strip">
+              <button class="thumb-btn active" onclick="switchImg(this, 'assets/images/openlms_ui_subjects.png', 'OpenLMS (DIA) Mechanical Engineering Curriculum: Fluid Mechanics, Thermodynamics, IC Engines, Power Plants & Solid Mechanics')"><img src="assets/images/openlms_ui_subjects.png" alt="ME Subjects"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/openlms_ui_student_dashboard.png', 'DIA Student Portal Dashboard: Enrolled Engineering Exams, Accuracy KPIs, Performance Snapshot & Organizations')"><img src="assets/images/openlms_ui_student_dashboard.png" alt="Student Dashboard"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/openlms_ui_learn_with_ai.png', 'DIA Socratic AI Tutor: Context-Aware Exam Learning Sessions & Automated Daily MCQ Generation')"><img src="assets/images/openlms_ui_learn_with_ai.png" alt="AI Tutor"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/openlms_ui_admin_dashboard.png', 'DIA Super Admin Multi-Tenant Governance Dashboard: Organizations, Active Plans, Approval Queue & User Analytics')"><img src="assets/images/openlms_ui_admin_dashboard.png" alt="Admin Dashboard"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/openlms_ui_landing.png', 'OpenLMS / DIA Platform Landing Page: Master Your Exams with DIA')"><img src="assets/images/openlms_ui_landing.png" alt="Landing"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/openlms_ui_features.png', 'Core Platform Capabilities: AI-Powered Learning, Progress Tracking, Multi-Tenant Support & Real-Time Assessments')"><img src="assets/images/openlms_ui_features.png" alt="Features"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/openlms_ui_login.png', 'DIA Unified Authentication Portal with Google OAuth & Role-Based Routing')"><img src="assets/images/openlms_ui_login.png" alt="Login"/></button>
             </div>
           </div>
         </article>
