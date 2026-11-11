@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raghavender Reddy Badugula | Mechanical, Simulation & Materials Engineer · Project Manager · Product Architect</title>
+  <meta name="description" content="Portfolio of Raghavender Reddy Badugula — MSc Advanced Mechanical Engineering (Cranfield University), CFD/FEA Simulation, WAAM Molten Salt Corrosion, Engineering Project Management, and AI-Augmented Product Architecture (Polyglot Engine, IndiCAT)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --bg-card: #111827;
+      --bg-elevated: #1e293b;
+      --border: rgba(148, 163, 184, 0.16);
+      --border-hover: rgba(56, 189, 248, 0.45);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-2: #6366f1;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* Subtle engineering grid background */
+    .bg-grid {
+      background-image: 
+        linear-gradient(to right, rgba(148, 163, 184, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(148, 163, 184, 0.04) 1px, transparent 1px);
+      background-size: 36px 36px;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navbar */
+    header.navbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 68px;
+    }
+    .brand {
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: 0.4px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .brand-badge {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #0b0f19;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+    }
+
+    /* Hero */
+    .hero {
+      padding: 76px 0 56px;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      color: var(--accent);
+    }
+    .pill.purple {
+      background: rgba(99, 102, 241, 0.12);
+      border-color: rgba(99, 102, 241, 0.35);
+      color: #a5b4fc;
+    }
+    .pill.emerald {
+      background: rgba(16, 185, 129, 0.12);
+      border-color: rgba(16, 185, 129, 0.35);
+      color: #6ee7b7;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #38bdf8, #818cf8, #34d399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-lead {
+      font-size: 1.12rem;
+      color: var(--text-muted);
+      max-width: 880px;
+      margin-bottom: 28px;
+    }
+    .hero-lead strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* Buttons */
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 44px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 18px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #0284c7, #4f46e5);
+      color: #fff;
+      box-shadow: 0 8px 24px -6px rgba(56, 189, 248, 0.35);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px -6px rgba(56, 189, 248, 0.5);
+    }
+    .btn-secondary {
+      background: var(--bg-elevated);
+      color: var(--text);
+      border-color: var(--border);
+    }
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    /* KPI Strip */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .kpi-card {
+      background: rgba(17, 24, 39, 0.8);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 20px;
+    }
+    .kpi-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .kpi-label {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Sections */
+    section {
+      padding: 68px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-header {
+      margin-bottom: 36px;
+    }
+    .section-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .section-title {
+      font-size: clamp(1.65rem, 3vw, 2.25rem);
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+    .section-desc {
+      color: var(--text-muted);
+      max-width: 760px;
+      margin-top: 8px;
+      font-size: 0.98rem;
+    }
+
+    /* Filter Bar */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+    .filter-btn {
+      background: var(--bg-card);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: rgba(56, 189, 248, 0.14);
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* Project Cards */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: border-color 0.25s, transform 0.25s;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+    }
+    .project-card:hover {
+      border-color: var(--border-hover);
+    }
+    @media (max-width: 960px) {
+      .project-card {
+        grid-template-columns: 1fr;
+      }
+    }
+    .project-content {
+      padding: 28px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .cat-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.73rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 6px;
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+    .cat-tag.pm {
+      background: rgba(245, 158, 11, 0.14);
+      color: #fbbf24;
+    }
+    .cat-tag.ai {
+      background: rgba(16, 185, 129, 0.14);
+      color: #34d399;
+    }
+    .cat-tag.mat {
+      background: rgba(168, 85, 247, 0.15);
+      color: #c084fc;
+    }
+    .score-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.74rem;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 6px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #6ee7b7;
+    }
+    .project-title {
+      font-size: 1.32rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text);
+      line-height: 1.3;
+    }
+    .project-summary {
+      color: var(--text-muted);
+      font-size: 0.93rem;
+      margin-bottom: 14px;
+    }
+    .project-bullets {
+      padding-left: 18px;
+      margin-bottom: 18px;
+      color: #cbd5e1;
+      font-size: 0.89rem;
+    }
+    .project-bullets li {
+      margin-bottom: 7px;
+    }
+    .project-bullets strong {
+      color: #f8fafc;
+    }
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .tech-chip {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.74rem;
+      padding: 3px 9px;
+      border-radius: 6px;
+      background: var(--bg-elevated);
+      color: #cbd5e1;
+      border: 1px solid rgba(148, 163, 184, 0.14);
+    }
+
+    /* Visual Gallery Side of Card */
+    .project-gallery {
+      background: #080c14;
+      border-left: 1px solid var(--border);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 12px;
+    }
+    @media (max-width: 960px) {
+      .project-gallery {
+        border-left: none;
+        border-top: 1px solid var(--border);
+      }
+    }
+    .main-img-wrap {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #0f172a;
+      height: 270px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-in;
+    }
+    .main-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #0f172a;
+      transition: transform 0.25s;
+    }
+    .main-img-wrap:hover img {
+      transform: scale(1.02);
+    }
+    .img-caption-bar {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-align: center;
+      min-height: 20px;
+    }
+    .thumb-strip {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+    .thumb-btn {
+      width: 68px;
+      height: 48px;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 2px solid transparent;
+      background: #1e293b;
+      cursor: pointer;
+      flex-shrink: 0;
+      padding: 0;
+      opacity: 0.65;
+      transition: all 0.15s;
+    }
+    .thumb-btn.active,
+    .thumb-btn:hover {
+      border-color: var(--accent);
+      opacity: 1;
+    }
+    .thumb-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Honest AI-Augmented Note Box */
+    .ai-methodology-banner {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(56, 189, 248, 0.08));
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin-bottom: 30px;
+    }
+    .ai-methodology-banner h3 {
+      font-size: 1rem;
+      color: #6ee7b7;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ai-methodology-banner p {
+      font-size: 0.9rem;
+      color: #cbd5e1;
+    }
+
+    /* Skills & Experience 2-col */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+    @media (max-width: 860px) {
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+    .panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 26px;
+    }
+    .panel h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--accent);
+    }
+    .timeline-item {
+      padding-left: 18px;
+      border-left: 2px solid rgba(56, 189, 248, 0.35);
+      margin-bottom: 22px;
+      position: relative;
+    }
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+    .timeline-item h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .timeline-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .timeline-item p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* CV Download Cards */
+    .cv-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 22px;
+    }
+    .cv-card {
+      background: linear-gradient(160deg, #111827, #1e293b);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .cv-card h3 {
+      font-size: 1.18rem;
+      font-weight: 700;
+    }
+    .cv-card p {
+      font-size: 0.89rem;
+      color: var(--text-muted);
+    }
+    .cv-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* Lightbox Modal */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 8, 15, 0.92);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      flex-direction: column;
+    }
+    .lightbox.open {
+      display: flex;
+    }
+    .lightbox img {
+      max-width: 92vw;
+      max-height: 80vh;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #0f172a;
+    }
+    .lightbox-caption {
+      margin-top: 14px;
+      color: var(--text);
+      font-size: 0.95rem;
+      text-align: center;
+      max-width: 780px;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 28px;
+      background: var(--bg-elevated);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    footer {
+      padding: 44px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+  </style>
+</head>
+<body class="bg-grid">
+
+  <!-- Sticky Navigation -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="brand">
+        <span class="brand-badge">RRB</span>
+        <span>Raghavender Reddy Badugula</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#projects">Engineering & Simulation</a>
+        <a href="#ai-products">AI-Built Products</a>
+        <a href="#experience">Experience & Education</a>
+        <a href="#cv-downloads">Download CV</a>
+        <a href="https://github.com/Raghavender1234" target="_blank" rel="noopener">GitHub ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-pill-row">
+        <span class="pill">🎓 MSc Advanced Mechanical Engineering — Cranfield University, UK</span>
+        <span class="pill purple">🏆 GATE 2022 Qualified (Smart Manufacturing)</span>
+        <span class="pill emerald">⚡ Simulation (CFD / FEA / MATLAB) · Materials R&D · Technical PM</span>
+      </div>
+      <h1>
+        Engineering Physical Systems &<br />
+        <span class="gradient-text">AI-Augmented Technical Products</span>
+      </h1>
+      <p class="hero-lead">
+        I am <strong>Raghavender Reddy Badugula</strong> — an MSc Advanced Mechanical Engineering graduate from <strong>Cranfield University</strong> combining deep physical engineering execution (<strong>WAAM Molten Salt Corrosion at 600°C, Abaqus FEA Monopile Buckling, ANSYS ICEM CFD & Fluent VAWT Optimization, MATLAB BEM & Offshore Wave Mechanics</strong>) with <strong>3+ years of high-stakes Project & Operations Leadership</strong> and <strong>AI-augmented software product architecture</strong>.
+      </p>
+
+      <div class="cta-group">
+        <a href="assets/cv/Raghavender_Reddy_Engineering_CV.pdf" target="_blank" class="btn btn-primary">
+          📄 Download Engineering & Simulation CV (PDF)
+        </a>
+        <a href="assets/cv/Raghavender_Reddy_Project_Product_Manager_CV.pdf" target="_blank" class="btn btn-secondary">
+          📋 Download Project / Product Manager CV (PDF)
+        </a>
+        <a href="#projects" class="btn btn-secondary">
+          🔬 View Simulation & Lab Case Studies
+        </a>
+        <a href="https://github.com/Raghavender1234/polyglot-engine" target="_blank" rel="noopener" class="btn btn-secondary">
+          💻 Polyglot Engine Repo ↗
+        </a>
+      </div>
+
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-num">600°C / 500h</div>
+          <div class="kpi-label">WAAM SS316L Ternary Molten Salt Corrosion, 30-Position 3D Optical Metrology & SEM-EDS (MSc Thesis)</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-num">104k CFD / 23k FEA</div>
+          <div class="kpi-label">ANSYS ICEM CFD & Fluent VAWT Biomimetic Airfoil Mesh Independence + Abaqus 5-Mode Monopile Buckling</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-num">74% & 73% Marks</div>
+          <div class="kpi-label">Cranfield Top Module Performances in Fluid Mechanics & Offshore Wave Loading (MATLAB BEM) & Component Design</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-num">3+ Yrs PM + AI</div>
+          <div class="kpi-label">National Exam Localization PM (NTA, TCS iON, IBPS) & Product Architect of Polyglot Engine & IndiCAT</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Portfolio Case Studies -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Verified Technical Portfolio</div>
+        <h2 class="section-title">Engineering Simulations, Materials R&D, PM & AI Systems</h2>
+        <p class="section-desc">
+          Click any filter below or click on the simulation contours, SEM-EDS micrographs, SolidWorks CAD models, and PM matrices to inspect full-resolution evidence from my Cranfield MSc reports and software projects.
+        </p>
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterProjects('all', this)">All Case Studies (8)</button>
+        <button class="filter-btn" onclick="filterProjects('sim', this)">CFD, FEA & MATLAB Simulations (3)</button>
+        <button class="filter-btn" onclick="filterProjects('mat', this)">Materials, Corrosion & Lab R&D (2)</button>
+        <button class="filter-btn" onclick="filterProjects('pm', this)">Engineering Design & Project Management (2)</button>
+        <button class="filter-btn" onclick="filterProjects('ai', this)">AI-Augmented Product Architecture (1)</button>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- 1. MSc Thesis: WAAM SS316L Molten Salt Corrosion -->
+        <article class="project-card" data-category="mat">
+          <div class="project-content">
+            <div>
+              <div class="project-meta">
+                <span class="cat-tag mat">MSc Thesis · Materials & Corrosion</span>
+                <span class="score-badge">Supervisor: Dr. Stefano Mori · Cranfield University</span>
+              </div>
+              <h3 class="project-title">High-Temperature Molten Salt Corrosion of WAAM SS316L for CSP Thermal Energy Storage</h3>
+              <p class="project-summary">
+                Investigated the high-temperature degradation kinetics of Wire Arc Additively Manufactured (WAAM) SS316L stainless steel immersed in ternary chloride molten salt (10NaNO₃–78KNO₃–12KCl) at 600°C for 250 h and 500 h across open vs. covered-lid crucible conditions.
+              </p>
+              <ul class="project-bullets">
+                <li><strong>Experimental Execution & Safety:</strong> Authored comprehensive COSHH risk assessments and operated horizontal tube furnaces at 600°C under controlled nitrogen purge to simulate well-ventilated vs. vapour-retentive zones in Concentrated Solar Power (CSP) storage tanks.</li>
+                <li><strong>3D Dimensional Metrology & Gravimetry:</strong> Conducted 30-position stitched optical 3D surface profilometry (<code>.zvi</code> interferometry), cumulative probability radius-change modeling, and 10⁻⁵ g precision mass metrology.</li>
+                <li><strong>SEM-EDS Microstructural Characterization:</strong> Prepared cross-sectional metallographic mounts and performed Backscattered Electron (BSE) imaging, elemental mapping, and Point-ID spectroscopy—proving that covered-lid vapour retention accelerates porous scale growth, Na/K/Cl/O ingress, and early pit initiation at 250 h.</li>
+              </ul>
+            </div>
+            <div class="tech-stack">
+              <span class="tech-chip">WAAM SS316L</span>
+              <span class="tech-chip">600°C Ternary Molten Salt</span>
+              <span class="tech-chip">SEM-EDS Mapping & Point-ID</span>
+              <span class="tech-chip">3D Optical Profilometry (.zvi)</span>
+              <span class="tech-chip">COSHH Compliance</span>
+            </div>
+          </div>
+          <div class="project-gallery">
+            <div class="main-img-wrap" onclick="openLightbox(this)">
+              <img src="assets/images/thesis_image50.png" alt="SEM-EDS Cross-Sectional Elemental Map of WAAM SS316L Oxide Scale" />
+            </div>
+            <div class="img-caption-bar">SEM-EDS Layered Elemental Map (Cr, Fe, Ni, O, Na, Cl) across Corroded WAAM SS316L Scale</div>
+            <div class="thumb-strip">
+              <button class="thumb-btn active" onclick="switchImg(this, 'assets/images/thesis_image50.png', 'SEM-EDS Layered Elemental Map (Cr, Fe, Ni, O, Na, Cl) across Corroded WAAM SS316L Scale')"><img src="assets/images/thesis_image50.png" alt="EDS Map"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/thesis_image107.png', 'BSE Electron Micrograph showing Spectrum Point-ID Regions & Porous Scale Morphology')"><img src="assets/images/thesis_image107.png" alt="SEM Spectrum"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/thesis_image10.png', 'Selective Leaching & Oxide Scale Formation Mechanism at 600°C in Nitrate-Chloride Salt')"><img src="assets/images/thesis_image10.png" alt="Mechanism"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/thesis_furnace.jpg', 'Alumina Crucibles inside Horizontal Tube Furnace at 600°C')"><img src="assets/images/thesis_furnace.jpg" alt="Furnace"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/thesis_image19.jpg', 'Precision 30-Position Dimensional Metrology Mounting Jigs')"><img src="assets/images/thesis_image19.jpg" alt="Metrology Jig"/></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Fluid Mechanics & Offshore Wave Loading -->
+        <article class="project-card" data-category="sim">
+          <div class="project-content">
+            <div>
+              <div class="project-meta">
+                <span class="cat-tag">Fluid Mechanics & Offshore Loading</span>
+                <span class="score-badge">Mark Achieved: 74% · Cranfield University</span>
+              </div>
+              <h3 class="project-title">HAWT Rotor Blade Element Momentum (BEM) Solver & Airy Offshore Wave Kinematics</h3>
+              <p class="project-summary">
+                Two-part computational fluid and offshore hydrodynamics investigation combining XFOIL airfoil polar generation, an iterative MATLAB Blade Element Momentum (BEM) wind turbine solver, and analytical/numerical Airy wave force modeling.
+              </p>
+              <ul class="project-bullets">
+                <li><strong>Part A — HAWT Rotor BEM Aerodynamics:</strong> Computed lift and drag polars (C<sub>L</sub>, C<sub>D</sub>) for a symmetric NACA 0030 airfoil across angles of attack in XFOIL and wrote an iterative MATLAB BEM solver (<code>bem12.m</code>) converging axial (a) and tangential (a') induction factors across radial elements r = 3–7 m.</li>
+                <li><strong>Quantified Rotor Output:</strong> Calculated Total Thrust = <strong>1,804.61 N</strong>, Total Torque = <strong>1,693.79 Nm</strong>, Total Power = <strong>10,162.72 W</strong>, and Power Coefficient <strong>C<sub>P</sub> = 0.1872</strong>, evaluating radial pitch/twist optimization to prevent root stall.</li>
+                <li><strong>Part B — Offshore Monopile Wave Kinematics:</strong> Derived horizontal and vertical fluid particle velocity potentials under Linear (Airy) and Non-Linear wave theories (H = 0.6 m, T = 10 s, λ = 43.69 m, d = 2 m) and simulated depth-dependent orbital particle trajectories (z = 0, -1, -1.9 m) in MATLAB for offshore met-mast loading.</li>
+              </ul>
+            </div>
+            <div class="tech-stack">
+              <span class="tech-chip">MATLAB</span>
+              <span class="tech-chip">XFOIL</span>
+              <span class="tech-chip">Blade Element Momentum (BEM)</span>
+              <span class="tech-chip">Airy Wave Theory</span>
+              <span class="tech-chip">NACA 0030</span>
+            </div>
+          </div>
+          <div class="project-gallery">
+            <div class="main-img-wrap" onclick="openLightbox(this)">
+              <img src="assets/images/fluid_image10.png" alt="MATLAB Iterative BEM Solver Code and Rotor Output" />
+            </div>
+            <div class="img-caption-bar">MATLAB Iterative BEM Solver (bem12.m) Converged Thrust (1,804.6 N), Power (10.16 kW) & Cp (0.1872)</div>
+            <div class="thumb-strip">
+              <button class="thumb-btn active" onclick="switchImg(this, 'assets/images/fluid_image10.png', 'MATLAB Iterative BEM Solver (bem12.m) Converged Thrust (1,804.6 N), Power (10.16 kW) & Cp (0.1872)')"><img src="assets/images/fluid_image10.png" alt="BEM Code"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/fluid_image6.png', 'NACA 0030 Lift (CL) and Drag (CD) Coefficients vs Angle of Attack (XFOIL + MATLAB)')"><img src="assets/images/fluid_image6.png" alt="CL CD Polar"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/fluid_image9.png', 'Airy Wave Theory Elliptical Fluid Particle Trajectories across Water Depths (z = 0, -1, -1.9 m)')"><img src="assets/images/fluid_image9.png" alt="Wave Orbits"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/fluid_image4.png', 'NACA 0030 Symmetric Airfoil Geometry Generated in MATLAB')"><img src="assets/images/fluid_image4.png" alt="NACA 0030"/></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Abaqus FEA Buckling Analysis of Offshore Wind Turbine Monopiles -->
+        <article class="project-card" data-category="sim">
+          <div class="project-content">
+            <div>
+              <div class="project-meta">
+                <span class="cat-tag">Finite Element Analysis (FEA) · Structural Mechanics</span>
+                <span class="score-badge">Abaqus CAE · Cranfield University</span>
+              </div>
+              <h3 class="project-title">Engineering Stress & Eigenvalue Buckling Analysis of Offshore Wind Turbine Monopiles</h3>
+              <p class="project-summary">
+                Evaluated thin-walled structural instability and critical buckling loads of a 40 m offshore wind turbine hollow cylinder monopile foundation (outer radius R = 3.75 m, wall thickness t = 0.08 m) under combined axial, wave, and seabed pressure loading in Abaqus.
+              </p>
+              <ul class="project-bullets">
+                <li><strong>3D Datum Partitioning & Boundary Conditions:</strong> Partitioned the 40 m shell model vertically (10 m atmospheric top, 20 m seawater zone, 10 m seabed zone) and circumferentially into four 90° quadrants with a fixed <em>encastre</em> seabed base (U1=U2=U3=UR1=UR2=UR3=0).</li>
+                <li><strong>Structured Rectangular Meshing:</strong> Constructed a 23,200-element structured quad shell mesh (0.2 global seed) to eliminate the artificial deformation noise of tetrahedral elements.</li>
+                <li><strong>5-Mode Linear Perturbation Buckling Analysis:</strong> Solved for the first 5 eigenvalues under eccentric turbine/nacelle load, 1.5 kPa wave pressure, and 20.3 kPa sudden seabed pressure—tracking mode progression from Mode 1 (<strong>λ₁ = 0.33492</strong>, single mid-span buckle) to Mode 5 (<strong>λ₅ = 0.59170</strong>, five-wave ultimate shell instability) and base stress concentrations.</li>
+              </ul>
+            </div>
+            <div class="tech-stack">
+              <span class="tech-chip">Abaqus FEA</span>
+              <span class="tech-chip">Linear Perturbation (Buckle)</span>
+              <span class="tech-chip">23,200 Structured Shell Elements</span>
+              <span class="tech-chip">DNV-GL-ST-0126</span>
+              <span class="tech-chip">Offshore Wind Foundations</span>
+            </div>
+          </div>
+          <div class="project-gallery">
+            <div class="main-img-wrap" onclick="openLightbox(this)">
+              <img src="assets/images/fea_p10_img6.jpeg" alt="Abaqus Mode 1 Buckling Eigenvalue Contour" />
+            </div>
+            <div class="img-caption-bar">Mode 1 Fundamental Buckling Shape (Eigenvalue λ₁ = 0.33492) in Abaqus</div>
+            <div class="thumb-strip">
+              <button class="thumb-btn active" onclick="switchImg(this, 'assets/images/fea_p10_img6.jpeg', 'Mode 1 Fundamental Buckling Shape (Eigenvalue λ₁ = 0.33492) in Abaqus')"><img src="assets/images/fea_p10_img6.jpeg" alt="Mode 1"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/fea_p11_img8.jpeg', 'Mode 3 Three-Wave Buckling Deformation Pattern (Eigenvalue λ₃ = 0.53606)')"><img src="assets/images/fea_p11_img8.jpeg" alt="Mode 3"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/fea_p12_img10.jpeg', 'Mode 5 Five-Wave Ultimate Instability Mode (Eigenvalue λ₅ = 0.59170)')"><img src="assets/images/fea_p12_img10.jpeg" alt="Mode 5"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/fea_p8_img4.jpeg', '23,200-Element Structured Rectangular Shell Mesh (Global Seed 0.2)')"><img src="assets/images/fea_p8_img4.jpeg" alt="Mesh"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/fea_p7_img3.jpeg', '3D Datum-Plane Longitudinal & 90° Quadrant Partitioned Monopile Geometry')"><img src="assets/images/fea_p7_img3.jpeg" alt="Partitions"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/fea_p9_img5.jpeg', 'Combined Eccentric Load, Wave Pressure & Encastre Boundary Conditions')"><img src="assets/images/fea_p9_img5.jpeg" alt="BCs"/></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. CFD Assignment: Urban VAWT NACA 0015 Biomimetic Optimization -->
+        <article class="project-card" data-category="sim">
+          <div class="project-content">
+            <div>
+              <div class="project-meta">
+                <span class="cat-tag">Computational Fluid Dynamics (CFD)</span>
+                <span class="score-badge">ANSYS ICEM CFD & Fluent 2024 R2</span>
+              </div>
+              <h3 class="project-title">ICEM CFD Multi-Block Meshing & Biomimetic NACA 0015 Airfoil Optimization for Urban VAWTs</h3>
+              <p class="project-summary">
+                Investigated aerodynamic stall delay and lift enhancement on a symmetric NACA 0015 airfoil for urban Vertical Axis Wind Turbines (VAWTs) at 4 m/s and 12 m/s by introducing a 40%-chord upper bump and a stingray-inspired curved trailing edge.
+              </p>
+              <ul class="project-bullets">
+                <li><strong>C-Domain Topology & Multi-Block Blocking:</strong> Designed a C-shaped domain (-20c upstream, +40c downstream, ±20c far-field) in ANSYS ICEM CFD with custom split-block topology to capture the 40% chord bump and curved stingray tail.</li>
+                <li><strong>Boundary-Layer Resolution & Grid Independence:</strong> Enforced first-layer wall spacing of <strong>3.3 × 10⁻⁶ m</strong> (for target y⁺ at 12 m/s) with 2×2×2 determinant mesh quality <strong>&gt; 0.837</strong>; executed a 4-stage grid independence study from Coarse (21,274 nodes) to Super Fine (104,274 nodes, &lt;1% C<sub>L</sub>/C<sub>D</sub> delta).</li>
+                <li><strong>k-ω SST Flow Analysis:</strong> Solved 2D viscous flows in ANSYS Fluent at 5° and 10° AoA, showing delayed upper-surface boundary layer separation and an increase in C<sub>L</sub> from <strong>0.80 (baseline) to 0.951 (modified)</strong> alongside wake pressure-recovery trade-offs.</li>
+              </ul>
+            </div>
+            <div class="tech-stack">
+              <span class="tech-chip">ANSYS ICEM CFD</span>
+              <span class="tech-chip">ANSYS Fluent 2024 R2</span>
+              <span class="tech-chip">k-ω SST Turbulence</span>
+              <span class="tech-chip">Structured Multi-Block Mesh</span>
+              <span class="tech-chip">VAWT Aerodynamics</span>
+            </div>
+          </div>
+          <div class="project-gallery">
+            <div class="main-img-wrap" onclick="openLightbox(this)">
+              <img src="assets/images/cfd_p12_img11.png" alt="ANSYS Fluent Velocity Contours Baseline vs Modified NACA 0015" />
+            </div>
+            <div class="img-caption-bar">ANSYS Fluent Velocity Contours at 10° AoA, 12 m/s (Baseline NACA 0015 vs. Modified Profile)</div>
+            <div class="thumb-strip">
+              <button class="thumb-btn active" onclick="switchImg(this, 'assets/images/cfd_p12_img11.png', 'ANSYS Fluent Velocity Contours at 10° AoA, 12 m/s (Baseline NACA 0015)')"><img src="assets/images/cfd_p12_img11.png" alt="Velocity 1"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/cfd_p12_img12.jpeg', 'ANSYS Fluent Velocity Contours at 10° AoA, 12 m/s (Modified Airfoil with 40% Bump & Stingray Tail)')"><img src="assets/images/cfd_p12_img12.jpeg" alt="Velocity 2"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/cfd_p9_img7.jpeg', 'ICEM CFD Structured Blocking & Pre-Mesh Quality (2×2×2 Determinant Min 0.837)')"><img src="assets/images/cfd_p9_img7.jpeg" alt="Determinant"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/cfd_p8_img6.png', 'Modified NACA 0015 Profile with 40% Chord Bump and Stingray-Inspired Trailing Edge')"><img src="assets/images/cfd_p8_img6.png" alt="Modified Foil"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/cfd_p13_img13.jpeg', 'Static Pressure Contours around Baseline NACA 0015 at 10° AoA')"><img src="assets/images/cfd_p13_img13.jpeg" alt="Pressure 1"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/cfd_p13_img14.jpeg', 'Static Pressure Contours around Modified Airfoil showing Enhanced Upper Suction')"><img src="assets/images/cfd_p13_img14.jpeg" alt="Pressure 2"/></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Component Design: Smart & Sustainable Shower System -->
+        <article class="project-card" data-category="pm">
+          <div class="project-content">
+            <div>
+              <div class="project-meta">
+                <span class="cat-tag pm">Component Design & Mechatronic Prototyping</span>
+                <span class="score-badge">Mark Achieved: 73% · Cranfield University</span>
+              </div>
+              <h3 class="project-title">Smart & Sustainable Shower System — Cold-Water Recirculation CAD & 3D-Printed Prototype</h3>
+              <p class="project-summary">
+                End-to-end product design and physical prototyping of an automated household shower recirculation system that captures initial cold water in an under-tub buffer reservoir and pumps it back to the boiler until target bathing temperature is reached.
+              </p>
+              <ul class="project-bullets">
+                <li><strong>Systems Engineering & Stakeholder Mapping:</strong> Quantified stakeholder influence weights (40% end-users, 20% plumbers/installers, 20% manufacturers, 10% regulators, 10% tech developers) and defined functional/non-functional requirements targeting <strong>50–70% reduction in pre-bath cold water waste</strong>.</li>
+                <li><strong>SolidWorks 3D CAD & Bambu Lab 3D Printing:</strong> Iterated from hand-drawn concept sketches to a full SolidWorks 3D assembly (tub, under-slung reservoir, return piping, showerhead) and sliced/printed custom PLA valve/manifold housings (3h 52m print, 197.6 g filament).</li>
+                <li><strong>Full-Scale Studio Prototype:</strong> Built and demonstrated the physical prototype integrating solenoid valve flow routing and temperature sensor control logic.</li>
+              </ul>
+            </div>
+            <div class="tech-stack">
+              <span class="tech-chip">SolidWorks 3D CAD</span>
+              <span class="tech-chip">Bambu Studio 3D Printing</span>
+              <span class="tech-chip">Solenoid & Sensor Logic</span>
+              <span class="tech-chip">Requirements Engineering</span>
+              <span class="tech-chip">Sustainable Product Design</span>
+            </div>
+          </div>
+          <div class="project-gallery">
+            <div class="main-img-wrap" onclick="openLightbox(this)">
+              <img src="assets/images/shower_solidworks.jpg" alt="SolidWorks 3D CAD Model of Smart Shower Recirculation System" />
+            </div>
+            <div class="img-caption-bar">SolidWorks 3D CAD Assembly showing Under-Tub Cold-Water Storage Reservoir & Return Piping</div>
+            <div class="thumb-strip">
+              <button class="thumb-btn active" onclick="switchImg(this, 'assets/images/shower_solidworks.jpg', 'SolidWorks 3D CAD Assembly showing Under-Tub Cold-Water Storage Reservoir & Return Piping')"><img src="assets/images/shower_solidworks.jpg" alt="SolidWorks"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/shower_cad_3dprint.jpg', 'Bambu Studio 3D Slicer Preview for Custom Valve & Reservoir Coupling (0.20mm Layer Height)')"><img src="assets/images/shower_cad_3dprint.jpg" alt="Slicer"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/shower_3dprinted_part.jpg', '3D-Printed Functional PLA Component Prototype')"><img src="assets/images/shower_3dprinted_part.jpg" alt="3D Part"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/shower_final_design.jpg', 'Full-Scale Physical Prototype Demonstration at Cranfield University Design Studio')"><img src="assets/images/shower_final_design.jpg" alt="Final Prototype"/></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Engineering Design & Project Management: Stafford Cripps SC3 Modernization -->
+        <article class="project-card" data-category="pm">
+          <div class="project-content">
+            <div>
+              <div class="project-meta">
+                <span class="cat-tag pm">Engineering Design & Project Management</span>
+                <span class="score-badge">Project Lead · Cranfield University</span>
+              </div>
+              <h3 class="project-title">Stafford Cripps SC3 Smart Classroom Modernization — Charter, Risk Matrix & Gantt Delivery</h3>
+              <p class="project-summary">
+                Formulated a comprehensive engineering project management proposal to modernize the SC3 lecture theatre at Cranfield University using the Double Diamond Design Thinking model, circular economy principles, and UK/ISO building standards.
+              </p>
+              <ul class="project-bullets">
+                <li><strong>Project Charter & Standards Specification:</strong> Defined scope, constraints, and 6-group stakeholder alignment to deliver Smartboard AV integration, <strong>BS EN 12464-1</strong> LED lighting, <strong>ISO 3382-3</strong> acoustic paneling, <strong>BS EN 1729-1</strong> ergonomic seating reuse, and <strong>BS 8300</strong> wheelchair accessibility.</li>
+                <li><strong>15-Item Quantitative PM Risk Assessment Matrix:</strong> Scored pre-mitigation Probability × Impact (PI up to 25) across procurement delays, budget overruns, electrical H&S, structural integrity, and cybersecurity—assigning live task dates and mitigations that reduced all residual PI scores to <strong>≤ 9</strong>.</li>
+                <li><strong>Multi-Phase Gantt Schedule:</strong> Scheduled 26 tasks across Initiation, Planning & Design, Execution, and Evaluation (Mar–May 2025) with client/supervisor stage-gate approvals.</li>
+              </ul>
+            </div>
+            <div class="tech-stack">
+              <span class="tech-chip">Project Charter</span>
+              <span class="tech-chip">15-Item Risk Matrix (PI Scoring)</span>
+              <span class="tech-chip">Double Diamond Model</span>
+              <span class="tech-chip">Gantt Scheduling</span>
+              <span class="tech-chip">BS EN 12464-1 / ISO 3382-3 / BS 8300</span>
+            </div>
+          </div>
+          <div class="project-gallery">
+            <div class="main-img-wrap" onclick="openLightbox(this)">
+              <img src="assets/images/pm_just_page1.png" alt="SC3 Classroom Modernization Design & Standards Specification" />
+            </div>
+            <div class="img-caption-bar">SC3 Modernization Design Upgrades & BS/ISO Standards Mapping</div>
+            <div class="thumb-strip">
+              <button class="thumb-btn active" onclick="switchImg(this, 'assets/images/pm_just_page1.png', 'SC3 Modernization Design Upgrades & BS/ISO Standards Mapping')"><img src="assets/images/pm_just_page1.png" alt="Design"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/pm_risk_page1.png', '15-Item Quantitative PM Risk Assessment Framework (Pre- & Post-Mitigation PI Scores)')"><img src="assets/images/pm_risk_page1.png" alt="Risk Matrix"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/pm_gantt_page1.png', '11-Week Phased Project Execution Gantt Chart (Initiation, Planning, Execution, Evaluation)')"><img src="assets/images/pm_gantt_page1.png" alt="Gantt"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/pm_charter_page1.png', 'Project Charter: Stafford Cripps SC3 Modernization (Goals, Stakeholders & Key Starting Risks)')"><img src="assets/images/pm_charter_page1.png" alt="Charter"/></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. Industrial Group Project with Nissan: Semiconductor Solar Paint -->
+        <article class="project-card" data-category="mat">
+          <div class="project-content">
+            <div>
+              <div class="project-meta">
+                <span class="cat-tag mat">Industrial Group Project · Nanomaterials & Energy</span>
+                <span class="score-badge">Mark Achieved: 66% · With Nissan & Cranfield</span>
+              </div>
+              <h3 class="project-title">Chemical Preparation of a Novel Lead-Free Semiconductor Solar Paint (with Nissan)</h3>
+              <p class="project-summary">
+                Collaborative R&D group project with Nissan investigating a low-toxicity, paintable photovoltaic coating combining a Titanium Dioxide (TiO₂) electron transport matrix with lead-free Bismuth Methyl Iodide quantum dots.
+              </p>
+              <ul class="project-bullets">
+                <li><strong>Quantum Dot – TiO₂ Heterojunction Formulation:</strong> Dispersed bismuth-based quantum dots (1.8–2.3 eV tunable visible-light bandgap) into a TiO₂ semiconductor paint matrix via controlled mechanical and magnetic stirring across multiple solvent concentrations.</li>
+                <li><strong>Automotive Substrate Coating & Metrology:</strong> Prepared abraded and cleaned galvanized steel substrates, applied primer and active semiconductor paint layers, and conducted 48-hour electrical conductivity and phase-stability testing using calibrated multimeters and optical inspection.</li>
+                <li><strong>Team Coordination & Technical Synthesis:</strong> Led literature synthesis, PhD mentor lab coordination, and group portfolio report drafting under tight deadlines.</li>
+              </ul>
+            </div>
+            <div class="tech-stack">
+              <span class="tech-chip">Bismuth Quantum Dots</span>
+              <span class="tech-chip">TiO₂ Semiconductor Matrix</span>
+              <span class="tech-chip">Galvanized Automotive Substrates</span>
+              <span class="tech-chip">Electrical Conductivity Testing</span>
+              <span class="tech-chip">Technical Report Leadership</span>
+            </div>
+          </div>
+          <div class="project-gallery">
+            <div class="main-img-wrap" onclick="openLightbox(this)">
+              <img src="assets/images/nissan_paint.jpg" alt="Formulated Bismuth Quantum Dot Semiconductor Solar Paint Sample" />
+            </div>
+            <div class="img-caption-bar">Formulated Bismuth Methyl Iodide Quantum Dot + TiO₂ Semiconductor Solar Paint Sample</div>
+          </div>
+        </article>
+
+        <!-- 8. AI-Augmented Product Architecture: Polyglot Engine & IndiCAT -->
+        <article class="project-card" data-category="ai" id="ai-products">
+          <div class="project-content">
+            <div>
+              <div class="project-meta">
+                <span class="cat-tag ai">AI-Augmented Product Architecture</span>
+                <span class="score-badge">Product Architect & Logic Designer</span>
+              </div>
+              <h3 class="project-title">Polyglot Engine CLI & IndiCAT — Domain-Driven Localization & Layout Repair Systems</h3>
+              <p class="project-summary">
+                Drawing directly from 3+ years managing high-stakes national localization operations (NTA, TCS iON, IBPS), I conceived the product vision, system architecture, and verification logic for two end-to-end software tools—orchestrating AI-assisted coding workflows to build, test, and ship them.
+              </p>
+              <ul class="project-bullets">
+                <li><strong>Polyglot Engine (<code>github.com/Raghavender1234/polyglot-engine</code>):</strong> Designed a 6-layer architecture connecting whole-DOM Playwright geometry scanning, HarfBuzz text shaping (&lt;1.5 ms), and Unicode BiDi isolation to diagnose whether UI breakage stems from translation verbosity or rigid CSS, executing closed-loop candidate backtracking and verified CSS diff patching.</li>
+                <li><strong>IndiCAT (<code>indicat.co.in</code>) & UK Rota Optimizer:</strong> Architected a Windows desktop CAT & subtitle localization platform with local/cloud LLMs, PWA sync, and WhatsApp/Telegram bot integration, alongside a constraint-based UK Food Store Rota Optimizer and Multi-Tenant AI LMS.</li>
+                <li><strong>Authentic Engineering Role:</strong> I authored the problem definitions, 6-layer architectural blueprints, edge-case rules, and verification criteria, leveraging AI coding assistants to accelerate implementation, automated <code>pytest</code> validation, and CI/CD packaging.</li>
+              </ul>
+            </div>
+            <div class="tech-stack">
+              <span class="tech-chip">System & Logic Architecture</span>
+              <span class="tech-chip">AI-Augmented Engineering</span>
+              <span class="tech-chip">Playwright DOM Inspection</span>
+              <span class="tech-chip">HarfBuzz & Unicode BiDi</span>
+              <span class="tech-chip">FastAPI / Python / GitHub Actions</span>
+            </div>
+          </div>
+          <div class="project-gallery">
+            <div class="main-img-wrap" onclick="openLightbox(this)">
+              <img src="assets/images/polyglot_before.png" alt="Polyglot Engine Real-World Layout Proof Showcase" />
+            </div>
+            <div class="img-caption-bar">Polyglot Engine Live HUD: Diagnosing & Repairing German Overflow (+35.7px) & Arabic BiDi Alignment</div>
+            <div class="thumb-strip">
+              <button class="thumb-btn active" onclick="switchImg(this, 'assets/images/polyglot_before.png', 'Polyglot Engine Live HUD: Diagnosing & Repairing German Overflow (+35.7px) & Arabic BiDi Alignment')"><img src="assets/images/polyglot_before.png" alt="Polyglot Proof 1"/></button>
+              <button class="thumb-btn" onclick="switchImg(this, 'assets/images/polyglot_after.png', 'Polyglot Engine Full-Page German (de-DE) DOM Audit & Closed-Loop Verification')"><img src="assets/images/polyglot_after.png" alt="Polyglot Proof 2"/></button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience & Education Section -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Career & Academic Trajectory</div>
+        <h2 class="section-title">Work Experience, Education & Core Competencies</h2>
+      </div>
+
+      <div class="ai-methodology-banner">
+        <h3>💡 My Philosophy on Engineering & AI-Augmented Product Building</h3>
+        <p>
+          In physical engineering (CFD, FEA, Metallurgy, and Project Management), I rely on first-principles physics, empirical metrology, and international standards (DNV, BS EN, ISO, COSHH). In software and automation projects (<strong>Polyglot Engine, IndiCAT, UK Rota Optimizer, AI LMS</strong>), I act as the <strong>Product Architect & Systems Logic Designer</strong>—defining the domain logic, mathematical/workflow constraints, and end-to-end verification loops while leveraging modern AI coding workflows to build and ship production-ready tools rapidly.
+        </p>
+      </div>
+
+      <div class="two-col">
+        <div class="panel">
+          <h3>💼 Work & Operational Leadership</h3>
+          <div class="timeline-item">
+            <h4>Team Lead / Operational Specialist</h4>
+            <div class="timeline-meta">Smashburger · Milton Keynes, UK | Nov 2024 – Present</div>
+            <p>Selected for Team Lead progression based on frontline operational performance; directing shift execution, staff workflows, quality control, inventory management, and H&S compliance in a high-volume UK environment.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Assistant Project Manager / Operational Coordinator</h4>
+            <div class="timeline-meta">National Testing Agency (NTA), TCS iON & IBPS Vendors · Delhi / Remote | Jun 2021 – Sep 2024</div>
+            <p>Directed end-to-end translation, localization, validation, and data operations for high-stakes national entrance and banking examinations (JEE Mains, CUET 2023, IBPS). Coordinated cross-functional freelance translator, SME, and typist teams across regional languages with 100% deadline and confidentiality compliance.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Founder & Product Architect — IndiCAT & Polyglot Engine</h4>
+            <div class="timeline-meta">indicat.co.in & GitHub | 2024 – Present</div>
+            <p>Conceived, architected, and shipped AI-integrated CAT/subtitling desktop software and autonomous multilingual UI verification tooling using AI-augmented development workflows.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Freelance Subtitle Localizer & Industrial Trainee</h4>
+            <div class="timeline-meta">Netflix / Amazon Prime Vendors & RINL Vizag Steel Plant / Maruti Suzuki | 2018 – 2021</div>
+            <p>Delivered English–Telugu subtitle localization for major streaming titles (including NCIS) and completed industrial manufacturing exposure at RINL Vizag Steel Plant (Coke Plant & I-beam rolling) and Maruti Suzuki.</p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>🎓 Education & Qualifications</h3>
+          <div class="timeline-item">
+            <h4>MSc in Advanced Mechanical Engineering</h4>
+            <div class="timeline-meta">Cranfield University, UK | Oct 2024 – Sep 2025 (Awarded Nov 2025)</div>
+            <p>
+              <strong>Transcript Highlights:</strong> Fluid Mechanics & Loading (<strong>74%</strong>), Component Design (<strong>73%</strong>), Structural Integrity (<strong>69%</strong>), Industrial Group Project with Nissan (<strong>66%</strong>), Principles of Engineering (<strong>64%</strong>), Engineering Design & Project Management (<strong>63%</strong>), MSc Thesis on WAAM SS316L Molten Salt Corrosion (<strong>62%</strong>), CFD for Renewable Energy (<strong>60%</strong>), Engineering Stress Analysis: Theory & Simulations (Abaqus FEA), Assessing Risk & Failure.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <h4>GATE 2022 Qualified — Smart Manufacturing</h4>
+            <div class="timeline-meta">Graduate Aptitude Test in Engineering | 2022</div>
+            <p>Qualified in Smart Manufacturing & Advanced Production Systems.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>B.Tech in Mechanical Engineering (Mechatronics)</h4>
+            <div class="timeline-meta">Mahatma Gandhi Institute of Technology (MGIT), Hyderabad | Aug 2016 – Nov 2020</div>
+            <p>Designed a 3D SolidWorks Multi-Terrain Quadruped Robot (walking kinematics) and conducted thermo-acoustic engine simulation research.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download CVs Section -->
+  <section id="cv-downloads">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Ready for Immediate Application</div>
+        <h2 class="section-title">Download Tailored CVs (PDF & Editable Word DOCX)</h2>
+        <p class="section-desc">
+          Two tailored 2-page CVs updated with all Cranfield MSc simulations, materials metrology, project management frameworks, and AI-augmented product engineering projects.
+        </p>
+      </div>
+
+      <div class="cv-cards">
+        <div class="cv-card">
+          <div>
+            <span class="cat-tag">Version A · Engineering, CFD/FEA & Materials R&D</span>
+            <h3 style="margin-top:10px;">Mechanical, Simulation & Project Engineering CV</h3>
+            <p style="margin-top:6px;">
+              Tailored for <strong>Mechanical Design, CFD/FEA Simulation, Renewable/Offshore Energy, Materials & Corrosion R&D, and Manufacturing Process Engineering</strong> roles. Highlights WAAM SS316L molten salt corrosion, MATLAB BEM & Airy wave loading (74%), Abaqus monopile buckling, ICEM CFD/Fluent VAWT optimization, and SolidWorks prototyping (73%).
+            </p>
+          </div>
+          <div class="cv-actions">
+            <a href="assets/cv/Raghavender_Reddy_Engineering_CV.pdf" target="_blank" class="btn btn-primary">📄 Download PDF</a>
+            <a href="assets/cv/Raghavender_Reddy_Engineering_CV.docx" download class="btn btn-secondary">📝 Download Editable DOCX</a>
+          </div>
+        </div>
+
+        <div class="cv-card">
+          <div>
+            <span class="cat-tag pm">Version B · Technical PM, Product & Operations</span>
+            <h3 style="margin-top:10px;">Technical Project Manager, Product & Operations CV</h3>
+            <p style="margin-top:6px;">
+              Tailored for <strong>Assistant Project Manager, Engineering Project Manager, Localization PM, Technical Product Manager, and Operations Lead</strong> roles. Foregrounds 3+ years of NTA/TCS iON exam PM leadership, Cranfield SC3 Project Charter & 15-item Risk Matrix, UK Team Lead operations, and AI-augmented product architecture (Polyglot Engine & IndiCAT).
+            </p>
+          </div>
+          <div class="cv-actions">
+            <a href="assets/cv/Raghavender_Reddy_Project_Product_Manager_CV.pdf" target="_blank" class="btn btn-primary">📄 Download PDF</a>
+            <a href="assets/cv/Raghavender_Reddy_Project_Product_Manager_CV.docx" download class="btn btn-secondary">📝 Download Editable DOCX</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox(event)">✕ Close</button>
+    <img id="lightbox-img" src="" alt="Expanded view" />
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p><strong>Raghavender Reddy Badugula</strong> · Bedford / Milton Keynes, UK (MK42 0RB) · <a href="mailto:brreddy16@gmail.com" style="color:var(--accent);">brreddy16@gmail.com</a> · +44 7554 849910</p>
+      <p style="margin-top:6px;">MSc Advanced Mechanical Engineering (Cranfield University) · <a href="https://github.com/Raghavender1234" target="_blank" rel="noopener" style="color:var(--accent);">github.com/Raghavender1234</a> · <a href="https://indicat.co.in" target="_blank" rel="noopener" style="color:var(--accent);">indicat.co.in</a></p>
+    </div>
+  </footer>
+
+  <script>
+    function switchImg(btn, src, caption) {
+      const gallery = btn.closest('.project-gallery');
+      const mainImg = gallery.querySelector('.main-img-wrap img');
+      const capBar = gallery.querySelector('.img-caption-bar');
+      mainImg.src = src;
+      capBar.textContent = caption;
+      gallery.querySelectorAll('.thumb-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    function openLightbox(wrap) {
+      const img = wrap.querySelector('img');
+      const cap = wrap.parentElement.querySelector('.img-caption-bar');
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox-caption').textContent = cap ? cap.textContent : img.alt;
+      document.getElementById('lightbox').classList.add('open');
+    }
+
+    function closeLightbox(e) {
+      if (e.target.id === 'lightbox' || e.target.classList.contains('lightbox-close')) {
+        document.getElementById('lightbox').classList.remove('open');
+      }
+    }
+
+    function filterProjects(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.project-card').forEach(card => {
+        if (cat === 'all' || card.dataset.category === cat) {
+          card.style.display = 'grid';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
