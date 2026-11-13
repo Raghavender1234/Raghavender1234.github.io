@@ -41,7 +41,7 @@ Recruiters and hiring managers can explore my work through three targeted entry 
 Alongside my core mechanical engineering background, I architect workflow logic and systems design for domain-specific automation tools:
 * **[Polyglot Engine](https://github.com/Raghavender1234/polyglot-engine)**: Autonomous multilingual UI layout scanner and repair CLI (Playwright DOM geometry, HarfBuzz text shaping, Unicode BiDi).
 * **[IndiCAT Workstation](https://indicat.co.in)**: Multi-format localization desktop application on the Microsoft Store (offline IndicTrans2/NLLB, Whisper dubbing, Translator CRM).
-* **[OpenLMS / PR DIA](https://github.com/Raghavender1234/pr-dia)**: Multi-tenant engineering assessment and learning management platform.
+* **[OpenLMS / PR DIA](https://github.com/Raghavender1234/pr-dia)**: Modular, multi-tenant learning and enterprise assessment platform (Flask, Docker, LaTeX/MathJax, Socratic AI Engine) built for educational institutions and corporate training organizations.
 
 ---
 
