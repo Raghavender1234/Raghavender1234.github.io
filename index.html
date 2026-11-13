@@ -98,9 +98,41 @@
     .nav-links a:hover {
       color: var(--accent);
     }
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .mobile-menu-btn .bar {
+      width: 20px;
+      height: 2px;
+      background-color: var(--text);
+      transition: all 0.3s ease;
+    }
     @media (max-width: 820px) {
+      .mobile-menu-btn {
+        display: flex;
+      }
       .nav-links {
         display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: rgba(11, 15, 25, 0.98);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 20px 24px;
+        gap: 16px;
+        backdrop-filter: blur(16px);
+      }
+      .nav-links.open {
+        display: flex;
       }
     }
 
@@ -286,12 +318,72 @@
       line-height: 1.55;
     }
 
-    /* Filter Bar */
-    .filter-bar {
+    /* Pathway Selector Box */
+    .pathways-section {
+      background: rgba(17, 24, 39, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px 28px;
+      margin-bottom: 34px;
+    }
+    .pathways-header {
       display: flex;
+      justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 28px;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .pathways-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pathways-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+    }
+    .pathway-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      text-align: left;
+    }
+    .pathway-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .pathway-card.active {
+      border-color: var(--accent);
+      background: rgba(56, 189, 248, 0.08);
+      box-shadow: 0 4px 20px -4px rgba(56, 189, 248, 0.25);
+    }
+    .pathway-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      display: block;
+    }
+    .pathway-name {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .pathway-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.4;
     }
     .filter-btn {
       background: var(--bg-card);
@@ -668,14 +760,20 @@
         <span class="brand-badge">RRB</span>
         <span>Raghavender Reddy Badugula</span>
       </a>
-      <nav class="nav-links">
-        <a href="#skills">Core Skills</a>
-        <a href="#projects">Engineering Projects</a>
-        <a href="#experience">Experience &amp; Education</a>
-        <a href="#software-projects">Independent Software</a>
-        <a href="#cv-downloads">Download CV</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#pathways" onclick="closeMobileMenu()">Career Pathways</a>
+        <a href="#skills" onclick="closeMobileMenu()">Core Skills</a>
+        <a href="#projects" onclick="closeMobileMenu()">Engineering Projects</a>
+        <a href="#experience" onclick="closeMobileMenu()">Experience &amp; Education</a>
+        <a href="#software-projects" onclick="closeMobileMenu()">Independent Initiatives</a>
+        <a href="#cv-downloads" onclick="closeMobileMenu()">Download CV</a>
         <a href="https://github.com/Raghavender1234" target="_blank" rel="noopener">GitHub ↗</a>
       </nav>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" onclick="toggleMobileMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
     </div>
   </header>
 
@@ -772,6 +870,38 @@
         </p>
       </div>
 
+      <!-- Career Pathways for Recruiters -->
+      <div class="pathways-section" id="pathways">
+        <div class="pathways-header">
+          <div class="pathways-title">
+            <span>🎯 Tailor View by Your Vacancy:</span>
+          </div>
+          <span style="font-size: 0.82rem; color: var(--text-muted);">Click a pathway to prioritize relevant project evidence and technical depth</span>
+        </div>
+        <div class="pathways-grid">
+          <div class="pathway-card active" id="pathway-all" onclick="selectPathway('all')">
+            <span class="pathway-tag">Overview</span>
+            <div class="pathway-name">Complete Engineering Profile</div>
+            <div class="pathway-desc">Comprehensive view of all simulation, laboratory materials R&amp;D, and project engineering case studies.</div>
+          </div>
+          <div class="pathway-card" id="pathway-sim" onclick="selectPathway('sim')">
+            <span class="pathway-tag">Pathway 01</span>
+            <div class="pathway-name">Simulation &amp; CFD/FEA</div>
+            <div class="pathway-desc">Targeting: CFD Engineer, FEA Specialist, Aerodynamics &amp; Structural Simulation roles.</div>
+          </div>
+          <div class="pathway-card" id="pathway-mat" onclick="selectPathway('mat')">
+            <span class="pathway-tag">Pathway 02</span>
+            <div class="pathway-name">Materials, Corrosion &amp; R&amp;D</div>
+            <div class="pathway-desc">Targeting: Materials R&amp;D, Failure Analysis, Metallography &amp; Experimental Research roles.</div>
+          </div>
+          <div class="pathway-card" id="pathway-pm" onclick="selectPathway('pm')">
+            <span class="pathway-tag">Pathway 03</span>
+            <div class="pathway-name">Mechanical Design &amp; Project Engineering</div>
+            <div class="pathway-desc">Targeting: Project Engineer, Mechanical Design Engineer, Technical Coordinator roles.</div>
+          </div>
+        </div>
+      </div>
+
       <div class="filter-bar">
         <button class="filter-btn active" onclick="filterProjects('featured', this)">Featured Top 4 Projects (4)</button>
         <button class="filter-btn" onclick="filterProjects('all-eng', this)">All Engineering &amp; Design Projects (8)</button>
@@ -795,15 +925,16 @@
                 Investigated the high-temperature corrosion behavior of Wire Arc Additively Manufactured (WAAM) SS316L stainless steel in ternary chloride molten salt at 600°C for Concentrated Solar Power (CSP) thermal energy storage tanks. Conducted 250-hour and 500-hour furnace exposure experiments, metallographic preparation, 3D optical surface metrology, and SEM-EDS microscopy to compare corrosion mechanisms in open versus vapour-retentive covered crucibles.
               </p>
               <ul class="project-bullets">
-                <li><strong>Problem &amp; Scope:</strong> Evaluated whether additively manufactured SS316L can withstand corrosive nitrate-chloride molten salts at 600°C under different tank ventilation conditions.</li>
-                <li><strong>Key Outcome:</strong> Proved that covered-lid vapour retention accelerates porous oxide scale formation, chlorine/alkali ingress, and early pit initiation at 250 hours compared to compact Cr/Fe-rich oxide layers in open crucibles.</li>
+                <li><strong>Problem &amp; Scope:</strong> Evaluated whether Wire Arc Additively Manufactured (WAAM) SS316L can withstand aggressive ternary chloride molten salts at 600°C under different tank ventilation conditions.</li>
+                <li><strong>Key Observations:</strong> Experimental observations across 250 h and 500 h exposures indicated that covered-lid vapour retention accelerated porous scale growth, chlorine/potassium ingress, and early pit initiation at 250 hours compared to compact Cr/Fe-rich oxide films formed in open crucibles.</li>
               </ul>
               <details class="tech-details">
-                <summary>View Technical Parameters &amp; Experimental Methodology</summary>
+                <summary>View Technical Parameters, Sample Scope &amp; Limitations</summary>
                 <ul>
-                  <li><strong>Furnace Exposure:</strong> Ternary salt mixture (<code>10NaNO₃-78KNO₃-12KCl</code>) at 600°C for 250 h and 500 h in a horizontal tube furnace under controlled nitrogen purge; authored full COSHH risk assessments.</li>
-                  <li><strong>Metallographic Preparation:</strong> Precision abrasive sectioning, cold-resin mounting, sequential SiC grinding, diamond polishing, and ultrasonic cleaning in acetone and isopropanol (IPA).</li>
-                  <li><strong>Metrology &amp; Characterization:</strong> 30-position stitched 3D optical dimensional profilometry (<code>.zvi</code> interferometry &amp; cumulative probability radius-change distributions), 10⁻⁵ g analytical balance gravimetry, and cross-sectional Backscattered Electron (BSE) SEM-EDS elemental mapping and Point-ID spectroscopy.</li>
+                  <li><strong>Exposure Matrix &amp; Chemistry:</strong> Ternary salt mixture (<code>10NaNO₃-78KNO₃-12KCl</code> wt%) at 600°C for 250 h and 500 h in a horizontal tube furnace with controlled N₂ purge; tested cylindrical WAAM coupons in open vs. covered alumina crucibles; authored full COSHH risk assessments.</li>
+                  <li><strong>Dimensional Metrology:</strong> 30-position stitched 3D optical profilometry (<code>.zvi</code> interferometry) measuring radial dimensional loss distributions alongside 10⁻⁵ g analytical gravimetry.</li>
+                  <li><strong>Microstructural Characterization:</strong> Cross-sectional Backscattered Electron (BSE) SEM-EDS elemental mapping and Point-ID spectroscopy examining selective Cr/Fe leaching and sub-surface chloride penetration.</li>
+                  <li><strong>Research Limitations:</strong> Static furnace conditions without dynamic thermal cycling or flow turbulence; results reflect isothermal immersion behaviour for baseline alloy screening.</li>
                 </ul>
               </details>
             </div>
@@ -843,15 +974,21 @@
                 Investigated the aerodynamic performance of a modified NACA 0015 airfoil featuring an upper-surface bump and biomimetic trailing-edge geometry for urban Vertical Axis Wind Turbines (VAWTs). Developed a structured multi-block mesh in ANSYS ICEM CFD, completed a four-stage mesh independence study, and performed viscous flow simulations in ANSYS Fluent to compare lift, drag, and flow separation against the baseline airfoil.
               </p>
               <ul class="project-bullets">
-                <li><strong>Problem &amp; Action:</strong> Addressed low-wind dynamic stall on symmetric VAWT blades by modeling a 40%-chord upper surface bump and curved trailing edge across 4 m/s and 12 m/s inflow conditions.</li>
-                <li><strong>Key Outcome:</strong> Delayed upper-surface boundary layer separation and increased the lift coefficient (C<sub>L</sub>) from <strong>0.80 (baseline) to 0.95 (modified)</strong> at 10° angle of attack.</li>
+                <li><strong>Problem &amp; Geometry:</strong> Investigated aerodynamic stall delay on urban Vertical Axis Wind Turbine (VAWT) blades at 4 m/s and 12 m/s by integrating a 40%-chord upper-surface bump and biomimetic stingray trailing-edge curvature into a baseline symmetric NACA 0015 airfoil.</li>
+                <li><strong>Numerical Findings:</strong> The modified profile prolonged upper-surface flow attachment at 10° angle of attack, yielding a lift coefficient increase (C<sub>L</sub> from <strong>0.804 to 0.878</strong> on fine meshes, peak L/D of 48.36), balanced against an expected drag penalty (C<sub>D</sub> = 0.01808) due to trailing-edge vortex shedding.</li>
               </ul>
               <details class="tech-details">
-                <summary>View Technical Parameters &amp; Mesh Independence Data</summary>
+                <summary>View Mesh Independence Table &amp; Simulation Limitations</summary>
                 <ul>
-                  <li><strong>Domain &amp; Structured Blocking:</strong> C-shaped computational domain (-20c upstream, +40c downstream, ±20c far-field) with multi-block O-grid topology in ANSYS ICEM CFD.</li>
-                  <li><strong>Boundary Layer &amp; Quality:</strong> First-layer wall spacing of <code>3.3 × 10⁻⁶ m</code> for target near-wall y⁺ resolution at 12 m/s; minimum 2×2×2 determinant quality <code>&gt; 0.837</code>.</li>
-                  <li><strong>4-Stage Grid Independence Study:</strong> Verified convergence across Coarse (21,274 nodes), Medium (41,624 nodes), Fine (68,450 nodes), and Super Fine (104,274 nodes) meshes with <code>&lt; 1%</code> C<sub>L</sub>/C<sub>D</sub> variation; solved with the k-ω SST turbulence model in ANSYS Fluent.</li>
+                  <li><strong>Domain Topology:</strong> C-shaped computational domain (-20c upstream, +40c downstream, ±20c far-field) with multi-block O-grid structured hexahedral meshing in ANSYS ICEM CFD.</li>
+                  <li><strong>Boundary Layer Resolution:</strong> First-layer height y = <code>3.3 × 10⁻⁶ m</code> ensuring near-wall y⁺ &lt; 1 at 12 m/s; 2×2×2 determinant mesh quality &gt; 0.837.</li>
+                  <li><strong>4-Stage Mesh Independence (10° AoA, 12 m/s):</strong>
+                    Coarse (21,274 nodes, C<sub>L</sub>=0.804, C<sub>D</sub>=0.01963) &rarr;
+                    Medium (39,742 nodes, C<sub>L</sub>=0.847, C<sub>D</sub>=0.01872) &rarr;
+                    Fine (76,654 nodes, C<sub>L</sub>=0.874, C<sub>D</sub>=0.01817) &rarr;
+                    Super Fine (104,274 nodes, C<sub>L</sub>=0.878, C<sub>D</sub>=0.01808, &lt;0.5% variation from Fine).
+                  </li>
+                  <li><strong>Simulation Limitations:</strong> 2D steady-state RANS (k-ω SST); does not resolve 3D rotational blade-tip effects or dynamic pitching stall cycles encountered in full VAWT operation.</li>
                 </ul>
               </details>
             </div>
@@ -1149,30 +1286,30 @@
             <h4>Operational Specialist (Team Lead Progression)</h4>
             <div class="timeline-meta">Smashburger · Milton Keynes, UK | Nov 2024 to Present</div>
             <ul>
-              <li>Selected for Team Lead progression based on frontline operational reliability in a high-volume UK hospitality environment.</li>
-              <li>Coordinate daily shift workflows, quality control, food safety auditing, and inventory management.</li>
+              <li>Selected for Team Lead progression based on consistent shift management and operational performance in a high-volume UK hospitality environment.</li>
+              <li>Coordinate daily shift workflows for a team of 6–10 team members, overseeing health &amp; safety auditing, quality assurance, and weekly inventory reconciliations.</li>
             </ul>
           </div>
           <div class="timeline-item">
             <h4>Assistant Project Manager (Less than 1 Year)</h4>
             <div class="timeline-meta">Enterprise Assessment &amp; Localization Operations | 2023 to Sep 2024 (&lt;1 Year)</div>
             <ul>
-              <li>Coordinated end-to-end multilingual translation, Subject Matter Expert (SME) validation, and data workflows for confidential national-scale competitive examination projects.</li>
-              <li>Managed cross-functional freelance translator and typist teams across regional languages under strict SLA deadlines and confidentiality protocols.</li>
+              <li>Coordinated end-to-end technical translation, Subject Matter Expert (SME) validation, and secure data workflows for confidential national-scale competitive examination operations.</li>
+              <li>Supervised a distributed network of 15+ freelance translators, reviewers, and typists across regional languages, enforcing strict 100% SLA turnaround deadlines and data confidentiality protocols.</li>
             </ul>
           </div>
           <div class="timeline-item">
             <h4>Freelance Technical Translator &amp; Localization Specialist</h4>
             <div class="timeline-meta">Media &amp; Corporate Localization Clients | 2018 to Sep 2024 (6 Years)</div>
             <ul>
-              <li>Delivered English-to-Telugu technical translation, streaming subtitle localization (Netflix and Amazon Prime releases), and remote interpretation for UK corporate clients.</li>
+              <li>Delivered specialized English-to-Telugu technical translation, streaming subtitle localization for major studio releases (Netflix and Amazon Prime), and remote interpretation for corporate clients.</li>
             </ul>
           </div>
           <div class="timeline-item">
             <h4>Industrial Engineering Internships</h4>
             <div class="timeline-meta">RINL Vizag Steel Plant &amp; Maruti Suzuki (Varun Motors) | 2018 to 2020</div>
             <ul>
-              <li>Completed industrial training at Rashtriya Ispat Nigam Limited (Coke Plant &amp; I-beam structural rolling mill) and Maruti Suzuki service operations.</li>
+              <li>Completed industrial manufacturing training at Rashtriya Ispat Nigam Limited (Coke Plant &amp; I-beam structural rolling mill) and Maruti Suzuki automotive maintenance operations.</li>
             </ul>
           </div>
         </div>
@@ -1205,14 +1342,14 @@
     </div>
   </section>
 
-  <!-- Independent Software Projects Section (Separated from Core Engineering) -->
+  <!-- Independent Product Development & Technical Initiatives Section (Separated from Core Engineering) -->
   <section id="software-projects">
     <div class="container">
       <div class="section-header">
         <div class="section-eyebrow">Additional Technical Initiative</div>
-        <h2 class="section-title">Independent Software &amp; Automation Projects</h2>
+        <h2 class="section-title">Independent Product Development &amp; Technical Initiatives</h2>
         <p class="section-desc">
-          Alongside my mechanical engineering studies, I design system architectures and workflow logic for localization and educational software tools, using AI-assisted coding workflows to build and ship functional applications.
+          Alongside my mechanical engineering studies, I conceive system architectures and automated workflow logic for domain-specific tools, utilizing AI-assisted software engineering practices to ship production-ready utilities and desktop applications.
         </p>
       </div>
 
@@ -1343,6 +1480,18 @@
   </footer>
 
   <script>
+    function toggleMobileMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.classList.toggle('open');
+    }
+
+    function closeMobileMenu() {
+      const nav = document.getElementById('navLinks');
+      if (nav.classList.contains('open')) {
+        nav.classList.remove('open');
+      }
+    }
+
     function switchImg(btn, src, caption) {
       const gallery = btn.closest('.project-gallery');
       const mainImg = gallery.querySelector('.main-img-wrap img');
@@ -1364,6 +1513,23 @@
     function closeLightbox(e) {
       if (e.target.id === 'lightbox' || e.target.classList.contains('lightbox-close')) {
         document.getElementById('lightbox').classList.remove('open');
+      }
+    }
+
+    function selectPathway(pathway) {
+      document.querySelectorAll('.pathway-card').forEach(c => c.classList.remove('active'));
+      const activeCard = document.getElementById(`pathway-${pathway}`);
+      if (activeCard) activeCard.classList.add('active');
+
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      if (pathway === 'all') {
+        filterProjects('featured', filterButtons[0]);
+      } else if (pathway === 'sim') {
+        filterProjects('sim', filterButtons[2]);
+      } else if (pathway === 'mat') {
+        filterProjects('mat', filterButtons[3]);
+      } else if (pathway === 'pm') {
+        filterProjects('pm', filterButtons[4]);
       }
     }
 
